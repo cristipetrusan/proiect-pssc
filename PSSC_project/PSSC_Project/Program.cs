@@ -1,7 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using Delivery.Domain.DeliveryModel;
 using LanguageExt;
 using OrderProcessing.Domain;
+using static Delivery.Domain.DeliveryModel.Address;
+using static Delivery.Domain.DeliveryModel.Delivery;
+using static Delivery.Domain.DeliveryModel.DeliveryOperations;
 using static OrderProcessing.Domain.Cart;
 using static OrderProcessing.Domain.CartItem;
 using static OrderProcessing.Domain.CartOperations;
@@ -13,6 +17,7 @@ namespace PSSC_Project
 	{
 		static void Main(string[] args)
 		{
+			//Cart workflow
 			Console.WriteLine("No items: ");
 			ICart cart = new EmptyCart();
 			ShowCart(cart);
@@ -42,8 +47,24 @@ namespace PSSC_Project
 			cart = PayItems(cart);
 			ShowCart(cart);
 	
-
 			Console.ReadLine();
+
+			//Delivery Workflow
+			var order = new Undelivered(new UnvalidatedAddress("10", "Lugoj", "Bd. Parvan"));
+
+			var result = DeliveryOperations.Deliver(AddressService.CheckAddress, order);
+
+			result.Match(
+					validDelivery =>
+					{
+						Console.WriteLine("The order was delivered");
+					},
+					error =>
+					{
+						Console.WriteLine($"The order can not be delivered. Reason: {error.ErrorMessage}");
+					}
+				);
+
 		}
 
 		private static void ShowCart(ICart cart)

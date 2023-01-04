@@ -1,17 +1,103 @@
 {
   "format": 1,
   "restore": {
-    "D:\\ANUL4\\PSSC\\PSSC_LAB\\PSSC_project\\PSSC_Project\\PSSC_Project.csproj": {}
+    "D:\\ANUL4\\PSSC\\PSSC_LAB\\GitPSSCproj\\proiect-pssc\\PSSC_project\\PSSC_Project\\PSSC_Project.csproj": {}
   },
   "projects": {
-    "D:\\ANUL4\\PSSC\\PSSC_LAB\\PSSC_project\\OrderProcessing.Domain\\OrderProcessing.Domain.csproj": {
+    "D:\\ANUL4\\PSSC\\PSSC_LAB\\GitPSSCproj\\proiect-pssc\\PSSC_project\\Delivery.Domain\\Delivery.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\ANUL4\\PSSC\\PSSC_LAB\\PSSC_project\\OrderProcessing.Domain\\OrderProcessing.Domain.csproj",
-        "projectName": "OrderProcessing.Domain",
-        "projectPath": "D:\\ANUL4\\PSSC\\PSSC_LAB\\PSSC_project\\OrderProcessing.Domain\\OrderProcessing.Domain.csproj",
+        "projectUniqueName": "D:\\ANUL4\\PSSC\\PSSC_LAB\\GitPSSCproj\\proiect-pssc\\PSSC_project\\Delivery.Domain\\Delivery.Domain.csproj",
+        "projectName": "Delivery.Domain",
+        "projectPath": "D:\\ANUL4\\PSSC\\PSSC_LAB\\GitPSSCproj\\proiect-pssc\\PSSC_project\\Delivery.Domain\\Delivery.Domain.csproj",
         "packagesPath": "C:\\Users\\Minerva Muresan\\.nuget\\packages\\",
-        "outputPath": "D:\\ANUL4\\PSSC\\PSSC_LAB\\PSSC_project\\OrderProcessing.Domain\\obj\\",
+        "outputPath": "D:\\ANUL4\\PSSC\\PSSC_LAB\\GitPSSCproj\\proiect-pssc\\PSSC_project\\Delivery.Domain\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Minerva Muresan\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "CSharp.Choices": {
+              "target": "Package",
+              "version": "[2.1.1, )"
+            },
+            "LanguageExt.Core": {
+              "target": "Package",
+              "version": "[4.4.0, )"
+            },
+            "LanguageExt.Parsec": {
+              "target": "Package",
+              "version": "[4.4.0, )"
+            },
+            "LanguageExt.Rx": {
+              "target": "Package",
+              "version": "[4.4.0, )"
+            },
+            "NETStandard.Library": {
+              "target": "Package",
+              "version": "[2.0.3, )"
+            },
+            "System.ComponentModel": {
+              "target": "Package",
+              "version": "[4.3.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.401\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\ANUL4\\PSSC\\PSSC_LAB\\GitPSSCproj\\proiect-pssc\\PSSC_project\\OrderProcessing.Domain\\OrderProcessing.Domain.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\ANUL4\\PSSC\\PSSC_LAB\\GitPSSCproj\\proiect-pssc\\PSSC_project\\OrderProcessing.Domain\\OrderProcessing.Domain.csproj",
+        "projectName": "OrderProcessing.Domain",
+        "projectPath": "D:\\ANUL4\\PSSC\\PSSC_LAB\\GitPSSCproj\\proiect-pssc\\PSSC_project\\OrderProcessing.Domain\\OrderProcessing.Domain.csproj",
+        "packagesPath": "C:\\Users\\Minerva Muresan\\.nuget\\packages\\",
+        "outputPath": "D:\\ANUL4\\PSSC\\PSSC_LAB\\GitPSSCproj\\proiect-pssc\\PSSC_project\\OrderProcessing.Domain\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -90,14 +176,14 @@
         }
       }
     },
-    "D:\\ANUL4\\PSSC\\PSSC_LAB\\PSSC_project\\PSSC_Project\\PSSC_Project.csproj": {
+    "D:\\ANUL4\\PSSC\\PSSC_LAB\\GitPSSCproj\\proiect-pssc\\PSSC_project\\PSSC_Project\\PSSC_Project.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\ANUL4\\PSSC\\PSSC_LAB\\PSSC_project\\PSSC_Project\\PSSC_Project.csproj",
+        "projectUniqueName": "D:\\ANUL4\\PSSC\\PSSC_LAB\\GitPSSCproj\\proiect-pssc\\PSSC_project\\PSSC_Project\\PSSC_Project.csproj",
         "projectName": "PSSC_Project",
-        "projectPath": "D:\\ANUL4\\PSSC\\PSSC_LAB\\PSSC_project\\PSSC_Project\\PSSC_Project.csproj",
+        "projectPath": "D:\\ANUL4\\PSSC\\PSSC_LAB\\GitPSSCproj\\proiect-pssc\\PSSC_project\\PSSC_Project\\PSSC_Project.csproj",
         "packagesPath": "C:\\Users\\Minerva Muresan\\.nuget\\packages\\",
-        "outputPath": "D:\\ANUL4\\PSSC\\PSSC_LAB\\PSSC_project\\PSSC_Project\\obj\\",
+        "outputPath": "D:\\ANUL4\\PSSC\\PSSC_LAB\\GitPSSCproj\\proiect-pssc\\PSSC_project\\PSSC_Project\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -119,8 +205,11 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "D:\\ANUL4\\PSSC\\PSSC_LAB\\PSSC_project\\OrderProcessing.Domain\\OrderProcessing.Domain.csproj": {
-                "projectPath": "D:\\ANUL4\\PSSC\\PSSC_LAB\\PSSC_project\\OrderProcessing.Domain\\OrderProcessing.Domain.csproj"
+              "D:\\ANUL4\\PSSC\\PSSC_LAB\\GitPSSCproj\\proiect-pssc\\PSSC_project\\Delivery.Domain\\Delivery.Domain.csproj": {
+                "projectPath": "D:\\ANUL4\\PSSC\\PSSC_LAB\\GitPSSCproj\\proiect-pssc\\PSSC_project\\Delivery.Domain\\Delivery.Domain.csproj"
+              },
+              "D:\\ANUL4\\PSSC\\PSSC_LAB\\GitPSSCproj\\proiect-pssc\\PSSC_project\\OrderProcessing.Domain\\OrderProcessing.Domain.csproj": {
+                "projectPath": "D:\\ANUL4\\PSSC\\PSSC_LAB\\GitPSSCproj\\proiect-pssc\\PSSC_project\\OrderProcessing.Domain\\OrderProcessing.Domain.csproj"
               }
             }
           }

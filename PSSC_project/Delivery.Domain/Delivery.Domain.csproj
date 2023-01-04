@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <OutputType>library</OutputType>
@@ -9,6 +9,9 @@
 
   <ItemGroup>
     <PackageReference Include="CSharp.Choices" Version="2.1.1" />
+    <PackageReference Include="LanguageExt.Core" Version="4.4.0" />
+    <PackageReference Include="LanguageExt.Parsec" Version="4.4.0" />
+    <PackageReference Include="LanguageExt.Rx" Version="4.4.0" />
     <PackageReference Include="NETStandard.Library" Version="2.0.3" />
     <PackageReference Include="System.ComponentModel" Version="4.3.0" />
   </ItemGroup>
