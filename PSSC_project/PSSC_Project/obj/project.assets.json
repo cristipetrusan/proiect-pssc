@@ -3049,11 +3049,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Minerva Muresan\\Desktop\\ANUL4\\PSSC\\PSSC_LAB\\PSSC_project\\PSSC_Project\\PSSC_Project.csproj",
+      "projectUniqueName": "D:\\ANUL4\\PSSC\\PSSC_LAB\\PSSC_project\\PSSC_Project\\PSSC_Project.csproj",
       "projectName": "PSSC_Project",
-      "projectPath": "C:\\Users\\Minerva Muresan\\Desktop\\ANUL4\\PSSC\\PSSC_LAB\\PSSC_project\\PSSC_Project\\PSSC_Project.csproj",
+      "projectPath": "D:\\ANUL4\\PSSC\\PSSC_LAB\\PSSC_project\\PSSC_Project\\PSSC_Project.csproj",
       "packagesPath": "C:\\Users\\Minerva Muresan\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Minerva Muresan\\Desktop\\ANUL4\\PSSC\\PSSC_LAB\\PSSC_project\\PSSC_Project\\obj\\",
+      "outputPath": "D:\\ANUL4\\PSSC\\PSSC_LAB\\PSSC_project\\PSSC_Project\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -3075,8 +3075,8 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Users\\Minerva Muresan\\Desktop\\ANUL4\\PSSC\\PSSC_LAB\\PSSC_project\\OrderProcessing.Domain\\OrderProcessing.Domain.csproj": {
-              "projectPath": "C:\\Users\\Minerva Muresan\\Desktop\\ANUL4\\PSSC\\PSSC_LAB\\PSSC_project\\OrderProcessing.Domain\\OrderProcessing.Domain.csproj"
+            "D:\\ANUL4\\PSSC\\PSSC_LAB\\PSSC_project\\OrderProcessing.Domain\\OrderProcessing.Domain.csproj": {
+              "projectPath": "D:\\ANUL4\\PSSC\\PSSC_LAB\\PSSC_project\\OrderProcessing.Domain\\OrderProcessing.Domain.csproj"
             }
           }
         }

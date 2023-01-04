@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "0ZTkkMI9BDt7K86IJCJcGclU3koauUjUSFzxY1Gx9fsD9etIsQCNR6ihLygyQRVuYX1hChbiizQZ7ZhhdRMoBA==",
+  "dgSpecHash": "6uiT18aISVzeou5hunSXvgTvDtII0Ptzm+e4AiWL20XnsjcOADMa9XZ6a6S/9d0TJDy8HSuFdgRSyvEFe42ixA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Minerva Muresan\\Desktop\\ANUL4\\PSSC\\PSSC_LAB\\PSSC_project\\PSSC_Project\\PSSC_Project.csproj",
+  "projectFilePath": "D:\\ANUL4\\PSSC\\PSSC_LAB\\PSSC_project\\PSSC_Project\\PSSC_Project.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Minerva Muresan\\.nuget\\packages\\csharp.choices\\2.1.1\\csharp.choices.2.1.1.nupkg.sha512",
     "C:\\Users\\Minerva Muresan\\.nuget\\packages\\csharp.choices.attributes\\2.1.1\\csharp.choices.attributes.2.1.1.nupkg.sha512",

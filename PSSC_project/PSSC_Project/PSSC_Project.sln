@@ -3,9 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.3.32922.545
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PSSC_Project", "PSSC_Project.csproj", "{11A77BB0-2A1C-4DD3-99B6-7C7AB03D6FB3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PSSC_Project", "PSSC_Project.csproj", "{11A77BB0-2A1C-4DD3-99B6-7C7AB03D6FB3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OrderProcessing.Domain", "..\OrderProcessing.Domain\OrderProcessing.Domain.csproj", "{254178A8-2F7B-4FB0-8191-A6EC55761B43}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OrderProcessing.Domain", "..\OrderProcessing.Domain\OrderProcessing.Domain.csproj", "{254178A8-2F7B-4FB0-8191-A6EC55761B43}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Delivery.Domain", "..\Delivery.Domain\Delivery.Domain.csproj", "{46523739-7F83-42FE-90C9-8A3051886F69}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{254178A8-2F7B-4FB0-8191-A6EC55761B43}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{254178A8-2F7B-4FB0-8191-A6EC55761B43}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{254178A8-2F7B-4FB0-8191-A6EC55761B43}.Release|Any CPU.Build.0 = Release|Any CPU
+		{46523739-7F83-42FE-90C9-8A3051886F69}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{46523739-7F83-42FE-90C9-8A3051886F69}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{46523739-7F83-42FE-90C9-8A3051886F69}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{46523739-7F83-42FE-90C9-8A3051886F69}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

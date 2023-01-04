@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LanguageExt.ClassInstances;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,13 +9,20 @@ namespace OrderProcessing.Domain
 {
 	public class CartItem
 	{
-		public int ProductId { get; private set; }
+		public int ItemId { get; private set; }
 		public int Quantity { get; private set; }
-
-		public CartItem(int productId, int quantity)
+		public decimal Price { get; set; }
+		public decimal Total
 		{
-			ProductId = productId;
+			get { return Quantity * Price; }
+		}
+
+		public CartItem(int itemId, decimal price, int quantity)
+		{
+			ItemId = itemId;
+			Price = price;
 			Quantity = quantity;
 		}
+
 	}
 }
