@@ -1,11 +1,13 @@
 public class ShoppingCart
 {
-    public List<Product> Items { get; set; } = new List<Product>();
+    public int CartId { get; set; }
+    public string? Name { get; set; }
+    public List<Item> Items { get; set; } = new List<Item>();
     public ShoppingCartState? CurrentState { get; set; }
 
-    public void AddItem(Product product)
+    public void AddItem(Item item)
     {
-        Items.Add(product);
+        Items.Add(item);
     }
 
     public void StartCheckout()
