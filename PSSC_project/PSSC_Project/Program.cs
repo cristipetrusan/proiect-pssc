@@ -6,7 +6,7 @@ using OrderProcessing.Domain;
 using static Delivery.Domain.DeliveryModel.Address;
 using static Delivery.Domain.DeliveryModel.Delivery;
 using static Delivery.Domain.DeliveryModel.DeliveryOperations;
-using static OrderProcessing.Domain.Cart;
+using static OrderProcessing.Domain.Order;
 using static OrderProcessing.Domain.CartItem;
 using static OrderProcessing.Domain.CartOperations;
 

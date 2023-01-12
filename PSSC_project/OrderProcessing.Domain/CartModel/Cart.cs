@@ -1,4 +1,5 @@
 ﻿using CSharp.Choices;
+using OrderProcessing.Domain.CartModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,16 +14,34 @@ namespace OrderProcessing.Domain
 	{
 		public interface ICart { }
 
-		public class EmptyCart : ICart
+		public class UnvalidatedCart : ICart
 		{
+			public IReadOnlyCollection<CartModel.UnvalidatedCart> Items { get; private set; }
+
+			internal UnvalidatedCart(IReadOnlyCollection<CartModel.UnvalidatedCart> items)
+			{
+				Items = items;
+			}
 
 		}
 
-		public class ActiveCart : ICart
+		public class InvalidatedCart : ICart
 		{
-			public IReadOnlyCollection<CartItem> Items { get; private set; }
+			public IReadOnlyCollection<CartModel.UnvalidatedCart> Items { get; private set; }
+			public string Reason { get; }
 
-			internal ActiveCart(IReadOnlyCollection<CartItem> items)
+			internal InvalidatedCart(IReadOnlyCollection<CartModel.UnvalidatedCart> items, string reason)
+			{
+				Items = items;
+				Reason = reason;
+			}
+		}
+
+		public class ValidatedCart : ICart
+		{
+			public IReadOnlyCollection<CartModel.ValidatedCart> Items { get; private set; }
+
+			internal ValidatedCart(IReadOnlyCollection<CartModel.ValidatedCart> items)
 			{
 				Items = items;
 			}
@@ -31,15 +50,14 @@ namespace OrderProcessing.Domain
 		public class PaidCart : ICart
 		{
 			public DateTime PaymentDate { get; private set; }
-			public decimal OrderPrice { get; private set; }
+			public IReadOnlyCollection<CartModel.ValidatedCart> Items { get; private set; }
+			public decimal Totalprice; 
 
-			public IReadOnlyCollection<CartItem> Items { get; private set; }
-
-			internal PaidCart(IReadOnlyCollection<CartItem> items, DateTime paymentDate, decimal orderPrice)
+			internal PaidCart(IReadOnlyCollection<CartModel.ValidatedCart> items, DateTime paymentDate, decimal totalprice)
 			{
 				Items = items;
 				PaymentDate = paymentDate;
-				OrderPrice = orderPrice;	
+				Totalprice = totalprice;
 			}
 		}
 	}
