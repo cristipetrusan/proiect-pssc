@@ -8,7 +8,7 @@ namespace OrderProcessing.Domain.CartModel
 	public class Amount
 	{
 		public int Value { get; }
-		private Amount(int value)
+		public Amount(int value)
 		{
 			if (IsValid(value))
 			{
@@ -37,6 +37,6 @@ namespace OrderProcessing.Domain.CartModel
 			}
 		}
 
-		private static bool IsValid(int amount) => amount > 0 && amount <= 10;
+		private static bool IsValid(int amount) => amount > 0 ;
 	}
 }

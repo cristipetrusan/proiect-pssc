@@ -4,9 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace OrderProcessing.Domain
+namespace OrderProcessing.Domain.CartModel
 {
-	internal class PlaceOrderWorkflow
-	{
-	}
+	public record UnvalidatedItem(string itemId, string amount);
 }

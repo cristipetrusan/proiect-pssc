@@ -9,7 +9,12 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Delivery.Domain\Delivery.Domain.csproj" />
+    <ProjectReference Include="..\Mco.Domain\Mco.Domain.csproj" />
     <ProjectReference Include="..\OrderProcessing.Domain\OrderProcessing.Domain.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Option.Either" Version="1.0.0" />
   </ItemGroup>
 
 </Project>
