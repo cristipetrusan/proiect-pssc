@@ -6,9 +6,9 @@ namespace OrderProcessing.Domain.CartModel
 {
 	public record ItemId
 	{
-		private static readonly Regex Pattern = new("[0-9]{3}$");
+		private static readonly Regex Pattern = new("^[0-9]{3}$");
 		public string Value { get; }
-		private ItemId(string value)
+		public ItemId(string value)
 		{
 			if (IsValid(value))
 			{

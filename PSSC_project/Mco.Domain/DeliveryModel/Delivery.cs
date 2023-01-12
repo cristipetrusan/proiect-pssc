@@ -13,9 +13,9 @@ namespace OrderProcessing.Domain
 
 		public class UnvalidatedDelivery : IDelivery
 		{
-			public IReadOnlyCollection<UnvalidatedCart> Items { get; private set; }
+			public IReadOnlyCollection<UnvalidatedItem> Items { get; private set; }
 
-			internal UnvalidatedDelivery(IReadOnlyCollection<UnvalidatedCart> items)
+			internal UnvalidatedDelivery(IReadOnlyCollection<UnvalidatedItem> items)
 			{
 				Items = items;
 			}
@@ -26,9 +26,9 @@ namespace OrderProcessing.Domain
 		public class Delivered : IDelivery
 		{
 			public DateTime PaymentDate { get; private set; }
-			public IReadOnlyCollection<ValidatedCart> Items { get; private set; }
+			public IReadOnlyCollection<ValidatedItem> Items { get; private set; }
 
-			internal Delivered(IReadOnlyCollection<ValidatedCart> items, DateTime deliveryDate)
+			internal Delivered(IReadOnlyCollection<ValidatedItem> items, DateTime deliveryDate)
 			{
 				Items = items;
 				PaymentDate = deliveryDate;

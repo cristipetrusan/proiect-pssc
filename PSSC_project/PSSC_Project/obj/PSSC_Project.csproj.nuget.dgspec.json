@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "D:\\ANUL4\\PSSC\\GitPSSC\\proiect-pssc\\PSSC_project\\PSSC_Project\\PSSC_Project.csproj": {}
+    "C:\\Users\\georg\\Desktop\\proiecte\\proiect-pssc\\PSSC_project\\PSSC_Project\\PSSC_Project.csproj": {}
   },
   "projects": {
-    "D:\\ANUL4\\PSSC\\GitPSSC\\proiect-pssc\\PSSC_project\\Delivery.Domain\\Delivery.Domain.csproj": {
+    "C:\\Users\\georg\\Desktop\\proiecte\\proiect-pssc\\PSSC_project\\Delivery.Domain\\Delivery.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\ANUL4\\PSSC\\GitPSSC\\proiect-pssc\\PSSC_project\\Delivery.Domain\\Delivery.Domain.csproj",
+        "projectUniqueName": "C:\\Users\\georg\\Desktop\\proiecte\\proiect-pssc\\PSSC_project\\Delivery.Domain\\Delivery.Domain.csproj",
         "projectName": "Delivery.Domain",
-        "projectPath": "D:\\ANUL4\\PSSC\\GitPSSC\\proiect-pssc\\PSSC_project\\Delivery.Domain\\Delivery.Domain.csproj",
-        "packagesPath": "C:\\Users\\Minerva Muresan\\.nuget\\packages\\",
-        "outputPath": "D:\\ANUL4\\PSSC\\GitPSSC\\proiect-pssc\\PSSC_project\\Delivery.Domain\\obj\\",
+        "projectPath": "C:\\Users\\georg\\Desktop\\proiecte\\proiect-pssc\\PSSC_project\\Delivery.Domain\\Delivery.Domain.csproj",
+        "packagesPath": "C:\\Users\\georg\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\georg\\Desktop\\proiecte\\proiect-pssc\\PSSC_project\\Delivery.Domain\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\Minerva Muresan\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\georg\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -81,20 +81,6 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "downloadDependencies": [
-            {
-              "name": "Microsoft.AspNetCore.App.Ref",
-              "version": "[6.0.12, 6.0.12]"
-            },
-            {
-              "name": "Microsoft.NETCore.App.Ref",
-              "version": "[6.0.12, 6.0.12]"
-            },
-            {
-              "name": "Microsoft.WindowsDesktop.App.Ref",
-              "version": "[6.0.12, 6.0.12]"
-            }
-          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
@@ -104,20 +90,112 @@
         }
       }
     },
-    "D:\\ANUL4\\PSSC\\GitPSSC\\proiect-pssc\\PSSC_project\\OrderProcessing.Domain\\OrderProcessing.Domain.csproj": {
+    "C:\\Users\\georg\\Desktop\\proiecte\\proiect-pssc\\PSSC_project\\Mco.Domain\\Mco.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\ANUL4\\PSSC\\GitPSSC\\proiect-pssc\\PSSC_project\\OrderProcessing.Domain\\OrderProcessing.Domain.csproj",
-        "projectName": "OrderProcessing.Domain",
-        "projectPath": "D:\\ANUL4\\PSSC\\GitPSSC\\proiect-pssc\\PSSC_project\\OrderProcessing.Domain\\OrderProcessing.Domain.csproj",
-        "packagesPath": "C:\\Users\\Minerva Muresan\\.nuget\\packages\\",
-        "outputPath": "D:\\ANUL4\\PSSC\\GitPSSC\\proiect-pssc\\PSSC_project\\OrderProcessing.Domain\\obj\\",
+        "projectUniqueName": "C:\\Users\\georg\\Desktop\\proiecte\\proiect-pssc\\PSSC_project\\Mco.Domain\\Mco.Domain.csproj",
+        "projectName": "Mco.Domain",
+        "projectPath": "C:\\Users\\georg\\Desktop\\proiecte\\proiect-pssc\\PSSC_project\\Mco.Domain\\Mco.Domain.csproj",
+        "packagesPath": "C:\\Users\\georg\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\georg\\Desktop\\proiecte\\proiect-pssc\\PSSC_project\\Mco.Domain\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\Minerva Muresan\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\georg\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "CSharp.Choices": {
+              "target": "Package",
+              "version": "[2.1.1, )"
+            },
+            "CSharp.Choices.Attributes": {
+              "target": "Package",
+              "version": "[2.1.1, )"
+            },
+            "LanguageExt.Core": {
+              "target": "Package",
+              "version": "[4.4.0, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[7.0.2, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[7.0.2, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[7.0.2, )"
+            },
+            "NETStandard.Library": {
+              "target": "Package",
+              "version": "[2.0.3, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.101\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\georg\\Desktop\\proiecte\\proiect-pssc\\PSSC_project\\OrderProcessing.Domain\\OrderProcessing.Domain.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\georg\\Desktop\\proiecte\\proiect-pssc\\PSSC_project\\OrderProcessing.Domain\\OrderProcessing.Domain.csproj",
+        "projectName": "OrderProcessing.Domain",
+        "projectPath": "C:\\Users\\georg\\Desktop\\proiecte\\proiect-pssc\\PSSC_project\\OrderProcessing.Domain\\OrderProcessing.Domain.csproj",
+        "packagesPath": "C:\\Users\\georg\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\georg\\Desktop\\proiecte\\proiect-pssc\\PSSC_project\\OrderProcessing.Domain\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\georg\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -173,20 +251,6 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "downloadDependencies": [
-            {
-              "name": "Microsoft.AspNetCore.App.Ref",
-              "version": "[6.0.12, 6.0.12]"
-            },
-            {
-              "name": "Microsoft.NETCore.App.Ref",
-              "version": "[6.0.12, 6.0.12]"
-            },
-            {
-              "name": "Microsoft.WindowsDesktop.App.Ref",
-              "version": "[6.0.12, 6.0.12]"
-            }
-          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
@@ -196,20 +260,20 @@
         }
       }
     },
-    "D:\\ANUL4\\PSSC\\GitPSSC\\proiect-pssc\\PSSC_project\\PSSC_Project\\PSSC_Project.csproj": {
+    "C:\\Users\\georg\\Desktop\\proiecte\\proiect-pssc\\PSSC_project\\PSSC_Project\\PSSC_Project.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\ANUL4\\PSSC\\GitPSSC\\proiect-pssc\\PSSC_project\\PSSC_Project\\PSSC_Project.csproj",
+        "projectUniqueName": "C:\\Users\\georg\\Desktop\\proiecte\\proiect-pssc\\PSSC_project\\PSSC_Project\\PSSC_Project.csproj",
         "projectName": "PSSC_Project",
-        "projectPath": "D:\\ANUL4\\PSSC\\GitPSSC\\proiect-pssc\\PSSC_project\\PSSC_Project\\PSSC_Project.csproj",
-        "packagesPath": "C:\\Users\\Minerva Muresan\\.nuget\\packages\\",
-        "outputPath": "D:\\ANUL4\\PSSC\\GitPSSC\\proiect-pssc\\PSSC_project\\PSSC_Project\\obj\\",
+        "projectPath": "C:\\Users\\georg\\Desktop\\proiecte\\proiect-pssc\\PSSC_project\\PSSC_Project\\PSSC_Project.csproj",
+        "packagesPath": "C:\\Users\\georg\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\georg\\Desktop\\proiecte\\proiect-pssc\\PSSC_project\\PSSC_Project\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\Minerva Muresan\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\georg\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -225,11 +289,14 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "D:\\ANUL4\\PSSC\\GitPSSC\\proiect-pssc\\PSSC_project\\Delivery.Domain\\Delivery.Domain.csproj": {
-                "projectPath": "D:\\ANUL4\\PSSC\\GitPSSC\\proiect-pssc\\PSSC_project\\Delivery.Domain\\Delivery.Domain.csproj"
+              "C:\\Users\\georg\\Desktop\\proiecte\\proiect-pssc\\PSSC_project\\Delivery.Domain\\Delivery.Domain.csproj": {
+                "projectPath": "C:\\Users\\georg\\Desktop\\proiecte\\proiect-pssc\\PSSC_project\\Delivery.Domain\\Delivery.Domain.csproj"
               },
-              "D:\\ANUL4\\PSSC\\GitPSSC\\proiect-pssc\\PSSC_project\\OrderProcessing.Domain\\OrderProcessing.Domain.csproj": {
-                "projectPath": "D:\\ANUL4\\PSSC\\GitPSSC\\proiect-pssc\\PSSC_project\\OrderProcessing.Domain\\OrderProcessing.Domain.csproj"
+              "C:\\Users\\georg\\Desktop\\proiecte\\proiect-pssc\\PSSC_project\\Mco.Domain\\Mco.Domain.csproj": {
+                "projectPath": "C:\\Users\\georg\\Desktop\\proiecte\\proiect-pssc\\PSSC_project\\Mco.Domain\\Mco.Domain.csproj"
+              },
+              "C:\\Users\\georg\\Desktop\\proiecte\\proiect-pssc\\PSSC_project\\OrderProcessing.Domain\\OrderProcessing.Domain.csproj": {
+                "projectPath": "C:\\Users\\georg\\Desktop\\proiecte\\proiect-pssc\\PSSC_project\\OrderProcessing.Domain\\OrderProcessing.Domain.csproj"
               }
             }
           }
@@ -243,6 +310,12 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
+          "dependencies": {
+            "Option.Either": {
+              "target": "Package",
+              "version": "[1.0.0, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -254,24 +327,6 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "downloadDependencies": [
-            {
-              "name": "Microsoft.AspNetCore.App.Ref",
-              "version": "[6.0.12, 6.0.12]"
-            },
-            {
-              "name": "Microsoft.NETCore.App.Host.win-x64",
-              "version": "[6.0.12, 6.0.12]"
-            },
-            {
-              "name": "Microsoft.NETCore.App.Ref",
-              "version": "[6.0.12, 6.0.12]"
-            },
-            {
-              "name": "Microsoft.WindowsDesktop.App.Ref",
-              "version": "[6.0.12, 6.0.12]"
-            }
-          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"

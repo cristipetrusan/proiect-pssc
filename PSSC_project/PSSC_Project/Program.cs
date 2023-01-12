@@ -1,90 +1,106 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using Microsoft.Extensions.Logging;
 using Delivery.Domain.DeliveryModel;
 using LanguageExt;
+using Mco.Domain;
+using Mco.Domain.Repositories;
+using Microsoft.EntityFrameworkCore;
 using OrderProcessing.Domain;
+using OrderProcessing.Domain.CartModel;
 using static Delivery.Domain.DeliveryModel.Address;
 using static Delivery.Domain.DeliveryModel.Delivery;
-using static Delivery.Domain.DeliveryModel.DeliveryOperations;
-using static OrderProcessing.Domain.Order;
-using static OrderProcessing.Domain.CartItem;
-using static OrderProcessing.Domain.CartOperations;
-
+using Mco.Domain.Dbo;
 
 namespace PSSC_Project
 {
-	class Program
+    class Program
 	{
-		static void Main(string[] args)
+        private static string ConnectionString = "Server=localhost\\SQLEXPRESS;Database=master;Trusted_Connection=True;Encrypt=false;";
+
+        static async Task Main(string[] args)
 		{
-			//Cart workflow
-			Console.WriteLine("No items: ");
-			ICart cart = new EmptyCart();
-			ShowCart(cart);
+            //using ILoggerFactory loggerFactory = ConfigureLoggerFactory();
 
-			Console.WriteLine("Add an item: ");
-			var item = new CartItem(1, 15, 1);
-			cart = AddItem(cart, item);
-			ShowCart(cart);
+            //var listOfGrades = ReadListOfGrades().ToArray();
+            //PayCartCommand command = new(listOfGrades);
+            //PlaceOrderWorkflow workflow = new();
+            //var result = await workflow.ExecuteAsync(command);
 
-			Console.WriteLine("Remove an item: ");
-			cart = RemoveItem(cart, item);
-			ShowCart(cart);
+            //result.Match(
+            //        whenPaidItemsFailedEvent: @event =>
+            //        {
+            //            Console.WriteLine($"Publish failed: {@event.Reason}");
+            //            return @event;
+            //        },
+            //        whenPaidItemsSucceededEvent: @event =>
+            //        {
+            //            Console.WriteLine($"Publish succeeded.");
+            //            Console.WriteLine(@event.Csv);
+            //            return @event;
+            //        }
+            //    );
 
-			Console.WriteLine("Add 2 more items: ");
-			item = new CartItem(2, 5, 1);
-			cart = AddItem(cart, item);
-			item = new CartItem(3, 10, 2);
-			cart = AddItem(cart, item);
-			ShowCart(cart);
+            var dbContextBuilder = new DbContextOptionsBuilder<OrdersContext>()
+                                    .UseSqlServer(ConnectionString);
+                                    //.UseLoggerFactory(loggerFactory);
+            OrdersContext ordersContext = new OrdersContext(dbContextBuilder.Options);
+            ItemsRepository itemsRepository = new(ordersContext);
+            OrdersRepository ordersRepository = new(ordersContext);
+            //ItemsInOrdersRepository itemsInOrdersRepository = new(ordersContext);
+
+            Console.WriteLine("Succes");
+
+            //var list = itemsRepository.GetAllOrders();
+            Console.WriteLine("Succes");
+
+            foreach (ItemDbo item in ordersContext.Items)
+            {
+                Console.WriteLine("4");
+                Console.WriteLine(item.Name);
+            }
+        }
+
+        private static List<UnvalidatedItem> ReadListOfGrades()
+        {
+            List<UnvalidatedItem> listOfGrades = new();
+            do
+            {
+                //read registration number and grade and create a list of greads
+                var itemId = ReadValue("ItemID: ");
+                if (string.IsNullOrEmpty(itemId))
+                {
+                    break;
+                }
+
+                var amount = ReadValue("Amount: ");
+                if (string.IsNullOrEmpty(amount))
+                {
+                    break;
+                }
+
+                listOfGrades.Add(new(itemId, amount));
+            } while (true);
+            return listOfGrades;
+        }
+
+        private static string? ReadValue(string prompt)
+        {
+            Console.Write(prompt);
+            return Console.ReadLine();
+        }
+
+        //private static ILoggerFactory ConfigureLoggerFactory()
+        //{
+        //    return LoggerFactory.Create(builder =>
+        //                        builder.AddSimpleConsole(options =>
+        //                        {
+        //                            options.IncludeScopes = true;
+        //                            options.SingleLine = true;
+        //                            options.TimestampFormat = "hh:mm:ss ";
+        //                        })
+        //                        .AddProvider(new Microsoft.Extensions.Logging.Debug.DebugLoggerProvider()));
+        //}
 
 
-			Console.WriteLine("Remove an item: ");
-			cart = RemoveItem(cart, item);
-			ShowCart(cart);
 
-			Console.WriteLine("Pay items: ");
-			cart = PayItems(cart);
-			ShowCart(cart);
-	
-			Console.ReadLine();
-
-			//Delivery Workflow
-			var order = new Undelivered(new UnvalidatedAddress("10", "Lugoj", "Bd. Parvan"));
-
-			var result = DeliveryOperations.Deliver(AddressService.CheckAddress, order);
-
-			result.Match(
-					validDelivery =>
-					{
-						Console.WriteLine("The order was delivered");
-					},
-					error =>
-					{
-						Console.WriteLine($"The order can not be delivered. Reason: {error.ErrorMessage}");
-					}
-				);
-
-		}
-
-		private static void ShowCart(ICart cart)
-		{
-			cart.Match(
-				empty =>
-				{
-					Console.WriteLine("Empty cart\n");
-					return Unit.Default;
-				},
-				active =>
-				{
-					Console.WriteLine("Active cart\n");
-					return Unit.Default;
-				},
-				paid =>
-				{
-					Console.WriteLine("Paid cart\n");
-					return Unit.Default;
-				});
-		}
-	}
+    }
 }
