@@ -25,7 +25,7 @@ namespace Mco.Domain
             Console.WriteLine("1");
             modelBuilder.Entity<ItemDbo>().ToTable("Items").HasKey(s => s.ItemId);
             modelBuilder.Entity<OrderDbo>().ToTable("Orders").HasKey(s => s.CartId);
-            modelBuilder.Entity<ItemsInOrderDbo>().ToTable("ItemsInOrders").HasKey(s => s.CartId);
+            modelBuilder.Entity<ItemsInOrderDbo>().ToTable("ItemsInCart").HasKey(s => s.CartId);
             Console.WriteLine("2");
         }
     }

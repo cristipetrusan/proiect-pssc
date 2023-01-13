@@ -6,5 +6,5 @@ using System.Threading.Tasks;
 
 namespace OrderProcessing.Domain.CartModel
 {
-	public record UnvalidatedItem(string itemId, string amount);
+	public record UnvalidatedItem(string itemId, string amount, string price);
 }

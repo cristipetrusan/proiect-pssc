@@ -5,23 +5,19 @@ using static OrderProcessing.Domain.CartModel.Items;
 using static OrderProcessing.Domain.CartModel.PaidItemsEvent;
 using OrderProcessing.Domain;
 using LanguageExt;
+using Mco.Domain;
 
 namespace OrderProcessing.Domain
 {
     public class PlaceOrderWorkflow
     {
-        public async Task<IPaidItemsEvent> ExecuteAsync(PayCartCommand command)
+        public async Task<IPaidItemsEvent> ExecuteAsync(PayCartCommand command, OrdersContext context)
         {
-            // UnvalidatedExamGrades unvalidatedGrades = new UnvalidatedExamGrades(command.InputExamGrades);
 			UnvalidatedItems unvalidatedItems = new UnvalidatedItems(command.InputCartItems);
             
-			// IExamGrades grades = await ValidateExamGrades(checkStudentExists, unvalidatedGrades);
-			IItems items = CartOperations.ValidateCartItems(unvalidatedItems);
+			IItems items = CartOperations.ValidateCartItems(unvalidatedItems, context);
 
-            // grades = CalculateFinalGrades(grades); NU NI L TREBE
-
-            // grades = PublishExamGrades(grades);
-			items = CartOperations.PayItems(items);
+			items = CartOperations.PayItems(items, context);
 
             return items.Match(
                     whenUnvalidatedItems: unvalidatedItems => (IPaidItemsEvent)(new PaidItemsFailedEvent("Unexpected unvalidated state") as IPaidItemsEvent),
@@ -31,10 +27,5 @@ namespace OrderProcessing.Domain
                     whenPaidItems: paidItems => (IPaidItemsEvent)new PaidItemsSucceededEvent(paidItems.Price, paidItems.PublishedDate)
                 );
         }
-
-        // private IItems PayItems(IItems items)
-        // {
-        //     throw new NotImplementedException();
-        // }
     }
 }

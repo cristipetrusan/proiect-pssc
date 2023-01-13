@@ -1,4 +1,6 @@
 ﻿using Mco.Domain.Dbo;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Microsoft.Identity.Client;
 using System;
 using System.Collections.Generic;
@@ -22,6 +24,12 @@ namespace Mco.Domain.Repositories
             Console.WriteLine("3");
             return _context.Items.ToList();
         }
+
+        //public bool IsItemInTable(string itemId)
+        //{
+        //    string query = String.Format("SELECT * FROM ITEMS WHERE ItemId={0}", itemId);
+        //    return _context.Items.SqlQuery(query).ToList();
+        //}
 
         //public ItemsRepository.GetItems()
         //{
