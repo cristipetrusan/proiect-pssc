@@ -5,11 +5,11 @@ using System.Text.RegularExpressions;
 
 namespace OrderProcessing.Domain
 {
-	public class OrderId
+	public class PostalCode
 	{
-		private static readonly Regex Pattern = new("^OR[0-9]{2}$");
+		private static readonly Regex Pattern = new("^[0-9]{6}$");
 		public string Value { get; }
-		private OrderId(string value)
+		private PostalCode(string value)
 		{
 			if (IsValid(value))
 			{
@@ -17,17 +17,17 @@ namespace OrderProcessing.Domain
 			}
 			else
 			{
-				throw new InvalidOrderIdException("");
+				throw new InvalidPostalCodeException("");
 			}
 		}
 
 		private static bool IsValid(string value) => Pattern.IsMatch(value);
 
-		public static Option<OrderId> TryParse(string valueString)
+		public static Option<PostalCode> TryParse(string valueString)
 		{
 			if (IsValid(valueString))
 			{
-				return Some<OrderId>(new(valueString));
+				return Some<PostalCode>(new(valueString));
 			}
 			return None;
 		}

@@ -11,26 +11,38 @@ namespace OrderProcessing.Domain
 	{
 		public interface IDelivery { }
 
-		public class UnvalidatedDelivery : IDelivery
+		public class Undelivered : IDelivery
 		{
-			public IReadOnlyCollection<UnvalidatedItem> Items { get; private set; }
+			public IReadOnlyCollection<UnvalidatedOrder> Orders { get; private set; }
 
-			internal UnvalidatedDelivery(IReadOnlyCollection<UnvalidatedItem> items)
+			internal Undelivered(IReadOnlyCollection<UnvalidatedOrder> oredrs)
 			{
-				Items = items;
+				Orders = oredrs;
 			}
 
 		}
 
+		public class InvalidDelivery : IDelivery
+		{
+			public IReadOnlyCollection<UnvalidatedOrder> Orders { get; private set; }
+			public string Message { get; set; }
+
+			internal InvalidDelivery(IReadOnlyCollection<UnvalidatedOrder> oredrs, string message)
+			{
+				Orders = oredrs;
+				Message = message;
+			}
+
+		}
 
 		public class Delivered : IDelivery
 		{
 			public DateTime PaymentDate { get; private set; }
-			public IReadOnlyCollection<ValidatedItem> Items { get; private set; }
+			public IReadOnlyCollection<ValidatedOrder> Orders { get; private set; }
 
-			internal Delivered(IReadOnlyCollection<ValidatedItem> items, DateTime deliveryDate)
+			internal Delivered(IReadOnlyCollection<ValidatedOrder> oredrs, DateTime deliveryDate)
 			{
-				Items = items;
+				Orders = oredrs;
 				PaymentDate = deliveryDate;
 			}
 		}

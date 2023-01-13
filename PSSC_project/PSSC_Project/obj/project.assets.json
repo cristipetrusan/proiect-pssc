@@ -1848,22 +1848,6 @@
         "runtime": {
           "bin/placeholder/Mco.Domain.dll": {}
         }
-      },
-      "OrderProcessing.Domain/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v6.0",
-        "dependencies": {
-          "CSharp.Choices": "2.1.1",
-          "CSharp.Choices.Attributes": "2.1.1",
-          "LanguageExt.Core": "4.4.0",
-          "NETStandard.Library": "2.0.3"
-        },
-        "compile": {
-          "bin/placeholder/OrderProcessing.Domain.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/OrderProcessing.Domain.dll": {}
-        }
       }
     }
   },
@@ -6019,39 +6003,34 @@
       "type": "project",
       "path": "../Mco.Domain/Mco.Domain.csproj",
       "msbuildProject": "../Mco.Domain/Mco.Domain.csproj"
-    },
-    "OrderProcessing.Domain/1.0.0": {
-      "type": "project",
-      "path": "../OrderProcessing.Domain/OrderProcessing.Domain.csproj",
-      "msbuildProject": "../OrderProcessing.Domain/OrderProcessing.Domain.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net6.0": [
+      "D:\\ANUL4\\PSSC\\PROJ_PSSC\\proiect-pssc\\PSSC_project\\OrderProcessing.Domain\\OrderProcessing.Domain.csproj",
       "Delivery.Domain >= 1.0.0",
       "Mco.Domain >= 1.0.0",
-      "Option.Either >= 1.0.0",
-      "OrderProcessing.Domain >= 1.0.0"
+      "Option.Either >= 1.0.0"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\georg\\.nuget\\packages\\": {},
+    "C:\\Users\\Minerva Muresan\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\georg\\Desktop\\proiecte\\proiect-pssc\\PSSC_project\\PSSC_Project\\PSSC_Project.csproj",
+      "projectUniqueName": "D:\\ANUL4\\PSSC\\PROJ_PSSC\\proiect-pssc\\PSSC_project\\PSSC_Project\\PSSC_Project.csproj",
       "projectName": "PSSC_Project",
-      "projectPath": "C:\\Users\\georg\\Desktop\\proiecte\\proiect-pssc\\PSSC_project\\PSSC_Project\\PSSC_Project.csproj",
-      "packagesPath": "C:\\Users\\georg\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\georg\\Desktop\\proiecte\\proiect-pssc\\PSSC_project\\PSSC_Project\\obj\\",
+      "projectPath": "D:\\ANUL4\\PSSC\\PROJ_PSSC\\proiect-pssc\\PSSC_project\\PSSC_Project\\PSSC_Project.csproj",
+      "packagesPath": "C:\\Users\\Minerva Muresan\\.nuget\\packages\\",
+      "outputPath": "D:\\ANUL4\\PSSC\\PROJ_PSSC\\proiect-pssc\\PSSC_project\\PSSC_Project\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\georg\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Minerva Muresan\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -6067,14 +6046,14 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Users\\georg\\Desktop\\proiecte\\proiect-pssc\\PSSC_project\\Delivery.Domain\\Delivery.Domain.csproj": {
-              "projectPath": "C:\\Users\\georg\\Desktop\\proiecte\\proiect-pssc\\PSSC_project\\Delivery.Domain\\Delivery.Domain.csproj"
+            "D:\\ANUL4\\PSSC\\PROJ_PSSC\\proiect-pssc\\PSSC_project\\Delivery.Domain\\Delivery.Domain.csproj": {
+              "projectPath": "D:\\ANUL4\\PSSC\\PROJ_PSSC\\proiect-pssc\\PSSC_project\\Delivery.Domain\\Delivery.Domain.csproj"
             },
-            "C:\\Users\\georg\\Desktop\\proiecte\\proiect-pssc\\PSSC_project\\Mco.Domain\\Mco.Domain.csproj": {
-              "projectPath": "C:\\Users\\georg\\Desktop\\proiecte\\proiect-pssc\\PSSC_project\\Mco.Domain\\Mco.Domain.csproj"
+            "D:\\ANUL4\\PSSC\\PROJ_PSSC\\proiect-pssc\\PSSC_project\\Mco.Domain\\Mco.Domain.csproj": {
+              "projectPath": "D:\\ANUL4\\PSSC\\PROJ_PSSC\\proiect-pssc\\PSSC_project\\Mco.Domain\\Mco.Domain.csproj"
             },
-            "C:\\Users\\georg\\Desktop\\proiecte\\proiect-pssc\\PSSC_project\\OrderProcessing.Domain\\OrderProcessing.Domain.csproj": {
-              "projectPath": "C:\\Users\\georg\\Desktop\\proiecte\\proiect-pssc\\PSSC_project\\OrderProcessing.Domain\\OrderProcessing.Domain.csproj"
+            "D:\\ANUL4\\PSSC\\PROJ_PSSC\\proiect-pssc\\PSSC_project\\OrderProcessing.Domain\\OrderProcessing.Domain.csproj": {
+              "projectPath": "D:\\ANUL4\\PSSC\\PROJ_PSSC\\proiect-pssc\\PSSC_project\\OrderProcessing.Domain\\OrderProcessing.Domain.csproj"
             }
           }
         }
@@ -6105,6 +6084,24 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
+        "downloadDependencies": [
+          {
+            "name": "Microsoft.AspNetCore.App.Ref",
+            "version": "[6.0.12, 6.0.12]"
+          },
+          {
+            "name": "Microsoft.NETCore.App.Host.win-x64",
+            "version": "[6.0.12, 6.0.12]"
+          },
+          {
+            "name": "Microsoft.NETCore.App.Ref",
+            "version": "[6.0.12, 6.0.12]"
+          },
+          {
+            "name": "Microsoft.WindowsDesktop.App.Ref",
+            "version": "[6.0.12, 6.0.12]"
+          }
+        ],
         "frameworkReferences": {
           "Microsoft.NETCore.App": {
             "privateAssets": "all"
@@ -6113,5 +6110,16 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.101\\RuntimeIdentifierGraph.json"
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "NU1104",
+      "level": "Error",
+      "message": "Unable to find project 'D:\\ANUL4\\PSSC\\PROJ_PSSC\\proiect-pssc\\PSSC_project\\OrderProcessing.Domain\\OrderProcessing.Domain.csproj'. Check that the project reference is valid and that the project file exists.",
+      "libraryId": "D:\\ANUL4\\PSSC\\PROJ_PSSC\\proiect-pssc\\PSSC_project\\OrderProcessing.Domain\\OrderProcessing.Domain.csproj",
+      "targetGraphs": [
+        "net6.0"
+      ]
+    }
+  ]
 }

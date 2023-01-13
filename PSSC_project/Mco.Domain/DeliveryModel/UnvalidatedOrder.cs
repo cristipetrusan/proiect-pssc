@@ -1,6 +1,4 @@
 ﻿namespace OrderProcessing.Domain
 {
-	public class UnvalidatedOrder
-	{
-	}
+	public record UndeliveredOrder(string orderId, string status);
 }
