@@ -8,12 +8,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using static OrderProcessing.Domain.CartModel.Items;
+using Mco.Domain;
+using Mco.Domain.Dbo;
+using Azure.Core;
+using Microsoft.EntityFrameworkCore;
 
 namespace OrderProcessing.Domain
 {
 	public static class CartOperations
 	{
-		public static IItems ValidateCartItems(UnvalidatedItems unvalidatedItems)
+		public static IItems ValidateCartItems(UnvalidatedItems unvalidatedItems, OrdersContext context)
 		{
 			List<ValidatedItem> validatedItems = new List<ValidatedItem>();
 			
@@ -22,11 +26,18 @@ namespace OrderProcessing.Domain
 				if (!((ItemId.TryParse(item.itemId) != None) && (Amount.TryParseAmount(item.amount) != None)))
 				{
 					Console.WriteLine("ItemID does not respect the format");
-					return (IItems)new InvalidItems(unvalidatedItems.ItemList, "ItemID does not respect the format");
+					return (IItems)new InvalidItems(unvalidatedItems.ItemList, "ItemID " + item.itemId+ " does not respect the format");
 				}
-				else 
-				validatedItems.Add(new ValidatedItem(new ItemId(item.itemId), new Amount(Convert.ToInt32(item.amount))));
 
+
+				if ((context.Items.Find(i => i.ItemId == item.itemId) == null))
+				{
+                    Console.WriteLine("ItemID is not in the table");
+                    return (IItems)new InvalidItems(unvalidatedItems.ItemList, "ItemID is not in the table");
+                }
+
+                validatedItems.Add(new ValidatedItem(new ItemId(item.itemId), new Amount(Convert.ToInt32(item.amount)),
+					new Price(Convert.ToDouble(item.price))));
 			}
 			return (IItems)new ValidatedItems(validatedItems);
 		} 
@@ -44,18 +55,37 @@ namespace OrderProcessing.Domain
         //                                             .ToList()
         //                                             .AsReadOnly());
 
-		public static IItems PayItems(IItems validatedItems) => validatedItems.Match(
+		public static IItems PayItems(IItems validatedItems, OrdersContext ordersContext) => validatedItems.Match(
 			whenUnvalidatedItems: unvalidatedItem => unvalidatedItem,
 			whenInvalidItems: invalidItem => invalidItem,
 			whenPaidItems: paidItem => paidItem,
-			whenValidatedItems: ExportData
+			whenValidatedItems: validatedItem => ExportData(validatedItem.ItemList, ordersContext)
 		);
 
-		private static IItems ExportData(ValidatedItems validatedItems) =>
-            new PaidItems(validatedItems.ItemList, "100", DateTime.Now);
-                                                    // .Select(CalculateStudentFinalGrade)
-                                                    // .ToList()
-                                                    // .AsReadOnly());
+        private static IItems ExportData(IReadOnlyCollection<ValidatedItem> itemList, OrdersContext ordersContext)
+        {
+            double totalPrice = 0;
+            Random rnd = new Random();
+            int num = rnd.Next();
+
+            foreach (ValidatedItem validatedItem in itemList)
+            {
+                totalPrice += validatedItem.amount.Value * validatedItem.price.Value;
+				//ItemsInOrderDbo item = new ItemsInOrderDbo();
+				//item.ItemId = validatedItem.itemId.Value;
+				//item.Amount = validatedItem.amount.Value;
+				//item.CartId = num.ToString();
+    //            ordersContext.ItemsInOrders.Add(item);
+                //ordersContext.SaveChanges();
+            }
+            OrderDbo order = new OrderDbo();
+			order.CartId = num.ToString();
+			order.TotalPrice = totalPrice;
+			ordersContext.Orders.Add(order);
+			ordersContext.SaveChanges();
+
+            return new PaidItems(itemList, totalPrice.ToString(), DateTime.Now);
+        }            
 
 		// =>
 		// 	unvalidatedItems.ItemList

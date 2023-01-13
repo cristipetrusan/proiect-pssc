@@ -5,38 +5,38 @@ using System.Text.RegularExpressions;
 
 namespace OrderProcessing.Domain.CartModel
 {
-	public class Amount
-	{
-		public int Value { get; }
-		public Amount(int value)
-		{
-			if (IsValid(value))
-			{
-				Value = value;
-			}
-			else
-			{
-				throw new InvalidOrderIdException("");
-			}
-		}
+    public class Amount
+    {
+        public int Value { get; }
+        public Amount(int value)
+        {
+            if (IsValid(value))
+            {
+                Value = value;
+            }
+            else
+            {
+                throw new InvalidOrderIdException("");
+            }
+        }
 
-		public override string ToString()
-		{
-			return $"{Value:0.##}";
-		}
+        public override string ToString()
+        {
+            return $"{Value:0.##}";
+        }
 
-		public static Option<Amount> TryParseAmount(string gradeString)
-		{
-			if (int.TryParse(gradeString, out int numericAmount) && IsValid(numericAmount))
-			{
-				return Some<Amount>(new(numericAmount));
-			}
-			else
-			{
-				return None;
-			}
-		}
+        public static Option<Amount> TryParseAmount(string gradeString)
+        {
+            if (int.TryParse(gradeString, out int numericAmount) && IsValid(numericAmount))
+            {
+                return Some<Amount>(new(numericAmount));
+            }
+            else
+            {
+                return None;
+            }
+        }
 
-		private static bool IsValid(int amount) => amount > 0 ;
-	}
+        private static bool IsValid(int amount) => amount > 0;
+    }
 }

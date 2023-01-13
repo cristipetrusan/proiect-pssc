@@ -19,30 +19,30 @@ namespace PSSC_Project
         static async Task Main(string[] args)
 		{
             //using ILoggerFactory loggerFactory = ConfigureLoggerFactory();
-
-            //var listOfGrades = ReadListOfGrades().ToArray();
-            //PayCartCommand command = new(listOfGrades);
-            //PlaceOrderWorkflow workflow = new();
-            //var result = await workflow.ExecuteAsync(command);
-
-            //result.Match(
-            //        whenPaidItemsFailedEvent: @event =>
-            //        {
-            //            Console.WriteLine($"Publish failed: {@event.Reason}");
-            //            return @event;
-            //        },
-            //        whenPaidItemsSucceededEvent: @event =>
-            //        {
-            //            Console.WriteLine($"Publish succeeded.");
-            //            Console.WriteLine(@event.Csv);
-            //            return @event;
-            //        }
-            //    );
-
             var dbContextBuilder = new DbContextOptionsBuilder<OrdersContext>()
-                                    .UseSqlServer(ConnectionString);
-                                    //.UseLoggerFactory(loggerFactory);
+                        .UseSqlServer(ConnectionString);
             OrdersContext ordersContext = new OrdersContext(dbContextBuilder.Options);
+
+            var listOfGrades = ReadListOfGrades().ToArray();
+            PayCartCommand command = new(listOfGrades);
+            PlaceOrderWorkflow workflow = new();
+            var result = await workflow.ExecuteAsync(command, ordersContext);
+
+            result.Match(
+                    whenPaidItemsFailedEvent: @event =>
+                    {
+                        Console.WriteLine($"Publish failed: {@event.Reason}");
+                        return @event;
+                    },
+                    whenPaidItemsSucceededEvent: @event =>
+                    {
+                        Console.WriteLine($"Publish succeeded.");
+                        Console.WriteLine(@event.Csv);
+                        return @event;
+                    }
+                );
+
+                                    //.UseLoggerFactory(loggerFactory);
             ItemsRepository itemsRepository = new(ordersContext);
             OrdersRepository ordersRepository = new(ordersContext);
             //ItemsInOrdersRepository itemsInOrdersRepository = new(ordersContext);
@@ -77,7 +77,13 @@ namespace PSSC_Project
                     break;
                 }
 
-                listOfGrades.Add(new(itemId, amount));
+                var price = ReadValue("price: ");
+                if (string.IsNullOrEmpty(price))
+                {
+                    break;
+                }
+
+                listOfGrades.Add(new(itemId, amount, price));
             } while (true);
             return listOfGrades;
         }
